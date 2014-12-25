@@ -41,7 +41,7 @@
                         <small class="text-muted">输入手机号帮他砍价吧</small>
                         <div class="row">
                             <div class="col-xs-8">
-                                <input type="number" id="number" style="width:100%;font-size:18px;border-color:gainsboro;"
+                                <input type="text" id="number" style="width:100%;font-size:18px;border-color:gainsboro;"
                                        maxlength="11"
                                        name="number" placeholder="请输入手机号"/>
                             </div>
@@ -58,7 +58,7 @@
                 <li id="captcha_li"  style="display:none">
                     <div class="row">
                         <div class="col-xs-5">
-                            <input type="number" id="captcha" style="width:100%;font-size:18px;border-color:gainsboro;"
+                            <input type="text" id="captcha" style="width:100%;font-size:18px;border-color:gainsboro;"
                                    maxlength="6"
                                    name="captcha" placeholder="验证码"/>
                         </div>
@@ -236,7 +236,7 @@ window.shareData = {
         }
         $.ajax({
             type: "post",
-            data: {number: number,s_n:s_n},
+            data: {number: number,id:id,s_n:s_n},
             dataType: "json",
             url: "./?r=mobile/goods/captcha",
             beforeSend: function (XMLHttpRequest) {

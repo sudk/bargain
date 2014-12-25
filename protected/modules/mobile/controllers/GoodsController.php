@@ -85,6 +85,7 @@ class GoodsController extends MobileBaseController
     }
 
     public function actionCaptcha(){
+        $id=$_POST['id'];
         $s_n=$_POST['s_n'];
         $n=$_POST['number'];
         $msg['status']=0;
@@ -99,6 +100,13 @@ class GoodsController extends MobileBaseController
             if($s_n==$n){
                 $msg['status']=-2;
                 $msg['desc']='亲，不能自己给自己砍价';
+                break;
+            }
+            $bargain_log=new BargainLog();
+            $is_log=$bargain_log->hasLog($id,$s_n,$n);
+            if($is_log){
+                $msg['status']=-3;
+                $msg['desc']='亲，你已经砍过价了';
                 break;
             }
             $t=time();
