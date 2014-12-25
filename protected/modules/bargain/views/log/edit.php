@@ -1,0 +1,1 @@
+<?php $this->renderPartial('_form', array('model' => $model, 'msg' => $msg,'__model__'=>'edit'));?>
