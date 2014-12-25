@@ -95,7 +95,7 @@
                 结束时间：<?= $model['end_time'] ?>
             </div>
         </a>
-        <a class="list-group-item row">
+        <a class="list-group-item">
             <ul class="list-unstyled">
                 <li>
                     <small class="text-muted">商品详情</small>
