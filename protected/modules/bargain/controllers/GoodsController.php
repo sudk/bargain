@@ -142,4 +142,10 @@ class GoodsController extends AuthBaseController
         $this->render("edit", array('model' => $model, 'msg' => $msg));
     }
 
+    public function actionIndex(){
+        $this->layout="//layouts/mobile";
+        $rows=Goods::GetActive();
+        $this->render("index",array('rows'=>$rows));
+    }
+
 }

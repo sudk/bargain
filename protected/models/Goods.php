@@ -118,4 +118,22 @@ class Goods extends CActiveRecord
         return $rows;
     }
 
+    public static function GetActive(){
+        $condition="status=:status and start_time <= :start_time and end_time >= :end_time";
+        $start_time=date("Y-m-d");
+        $end_time=date("Y-m-d")." 23:59:59";
+        $params=array(
+            'status'=>Goods::STATUS_NORMAL,
+            'start_time'=>$start_time,
+            'end_time'=>$end_time,
+        );
+        $rows = Yii::app()->db->createCommand()
+            ->select("*")
+            ->from("goods")
+            ->where($condition, $params)
+            ->order("record_time DESC")
+            ->queryAll();
+        return $rows;
+    }
+
 }

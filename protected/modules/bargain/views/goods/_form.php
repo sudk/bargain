@@ -1,3 +1,4 @@
+<script type="text/javascript" src="js/ajaxfileupload.js"></script>
 <?php
 if ($msg) {
     $class = Utils::getMessageType($msg['status']);
@@ -6,17 +7,13 @@ if ($msg) {
               <button class='close' aria-hidden='true' data-dismiss='alert' type='button'>×</button>
               <b>提示：</b>{$msg['msg']}
           </div>
-          <script type='text/javascript'>
-          {$this->gridId}.refresh();
-          </script>
           ";
 }
-
 $form = $this->beginWidget('SimpleForm', array(
-    'id' => 'form1',
+    'id' => 'form_goods',
     'enableAjaxSubmit' => false,
     'ajaxUpdateId' => 'content-body',
-    'focus' => array($model, 'id'),
+    'focus' => array($model,'id'),
     'role' => 'form', //可省略
     'formClass' => 'form-horizontal', //可省略 表单对齐样式
     'autoValidation' => true,
@@ -35,7 +32,7 @@ if(isset($__model__)){
         <label for="vercode" class="col-sm-2 control-label">商品图片</label>
         <div class="col-sm-6">
             <input type="file" name="file" id="file">
-            <button class="btn btn-primary btn-sm" onclick="ajaxUpload()">开始上传</button>
+            <a class="btn btn-primary btn-sm" onclick="fUpload()">开始上传</a>
             <div id="upmsg">
                 <?php if(isset($__model__)&&$model->img_url):?>
                 <img src='attachment/<?=$model->img_url?>' style='vertical-align:middle;max-height:500px;' width='150px'>
@@ -94,7 +91,7 @@ if(isset($__model__)){
 <script src="js/plugins/input-mask/jquery.inputmask.extensions.js" type="text/javascript"></script>
 <!-- CK Editor -->
 <script src="js/plugins/ckeditor/ckeditor.js" type="text/javascript"></script>
-<script type="text/javascript" src="js/ajaxfileupload.js"></script>
+
 <script type="text/javascript">
     jQuery(document).ready(function() {
         $("#Goods_start_time").inputmask("yyyy-mm-dd", {"placeholder": "yyyy-mm-dd"});
@@ -102,16 +99,16 @@ if(isset($__model__)){
         CKEDITOR.replace('Goods_desc');
     });
     //ajax上传图片
-    function ajaxUpload(){
+    function fUpload(){
         $("#upmsg").html("<img src='img/loading.gif' style='vertical-align:middle;' width='16px' height='16px'>正在上传请稍候...");
-
-        jQuery.ajaxFileUpload({
-            url:'./index.php?r=site/picupload',
+        return jQuery.ajaxFileUpload({
+            url:'./index.php?r=m/picupload',
             secureuri:false,
             fileElementId:'file',
             dataType: 'json',
             success: function (data, status) {
                 if (data.status==0) {
+                    alert(data.msg)
                     $("#Goods_img_url").val(data.path)
                     $("#upmsg").html("<img src='attachment/"+data.path+"' style='vertical-align:middle;max-height:500px;' width='150px'>");
                 } else {
@@ -120,12 +117,9 @@ if(isset($__model__)){
                 }
             },
             error: function () {
-
                 alert("上传失败");
             }
-
         });
-
         return false;
     }
 </script>

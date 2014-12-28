@@ -169,7 +169,7 @@ jQuery.extend({
             else
 			{	
 				jQuery(form).attr('enctype', 'multipart/form-data');			
-            }			
+            }
             jQuery(form).submit();
 
         } catch(e) 

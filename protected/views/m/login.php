@@ -6,7 +6,7 @@
             <?php endif;?>
             <span><?=$mode->name?></span>
         <?php else:?>
-            <span>营销管理系统</span>
+            <span>砍价管理系统</span>
         <?php endif;?>
     </div>
     <form action="index.php?r=m/login" method="post">

@@ -105,7 +105,7 @@
         </a>
     </div>
 </div>
-<a class="fixed_bar_bottom glyphicon glyphicon-home" style="color:darkgray" href="./?r=mobile/goods"></a>
+<a class="fixed_bar_bottom glyphicon glyphicon-home" style="color:darkgray" href="./?r=mobile/goods/list"></a>
 <script>
 window.shareData = {
     "imgUrl": "<?=Yii::app()->params['base_host'].Yii::app()->params['upload_file_path'] . "/" . $model['img_url'] ?>",

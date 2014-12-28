@@ -9,7 +9,7 @@ class GoodsController extends MobileBaseController
 {
 
     public function actionIndex(){
-        $id=$_POST['id'];
+        $id=$_REQUEST['id'];
         if($id){
             $model=Goods::GetTheActiveOne($id);
         }else{
@@ -18,9 +18,15 @@ class GoodsController extends MobileBaseController
         $this->render('index',array('model'=>$model));
     }
 
+    public function actionList(){
+        $rows=Goods::GetActive();
+        $this->render("list",array('rows'=>$rows));
+    }
+
     public function actionGenerate(){
         $id=$_POST['id'];
         $number=$_POST['number'];
+        $qrcode=$_POST['qrcode'];
         $msg['status']=0;
         $msg['desc']='生成链接成功';
         do{
@@ -30,23 +36,31 @@ class GoodsController extends MobileBaseController
                 break;
             }
             $l_id=$id.Yii::app()->params['split'].$number;
-            $l=Yii::app()->fcache->get($l_id);
-            if($l){
-                $msg['l']=$l;
-                break;
+            $link=Yii::app()->fcache->get($l_id);
+            if($link){
+                $msg['l']=$link;
+            }else{
+                $l=uniqid("l");
+                $link=Yii::app()->params['base_host']."?l=".$l;
+                Yii::app()->fcache->set($l_id,$link);
+                Yii::app()->fcache->set($l,$l_id);
+                $bargainPrice=new BargainPrice();
+                $rs=$bargainPrice->firstAdd($id,$number);
+                if(!$rs){
+                    $msg['status']=-2;
+                    $msg['desc']='生成链接失败';
+                    break;
+                }
+                $msg['l']=$link;
             }
-            $l=uniqid("l");
-            $link=Yii::app()->params['base_host']."?l=".$l;
-            Yii::app()->fcache->set($l_id,$link);
-            Yii::app()->fcache->set($l,$l_id);
-            $bargainPrice=new BargainPrice();
-            $rs=$bargainPrice->firstAdd($id,$number);
-            if(!$rs){
-                $msg['status']=-2;
-                $msg['desc']='生成链接失败';
-                break;
+            if($qrcode){
+                Yii::import('ext.qrcode.QRCode');
+                $code=new QRCode($link);
+                $n=uniqid("qr");
+                $img=Yii::app()->params['upload_file_path']."/qrcode/{$n}.png";
+                $code->create($img);
+                $msg['img']=$img;
             }
-            $msg['l']=$l;
         }while(false);
 
         print_r(json_encode($msg));

@@ -4827,3 +4827,154 @@ Stack trace:
 #12 {main}
 REQUEST_URI=/bargain/index.php?r=bargain/price/grid&page=0&&q%5Buid%5D=13333513015&q%5Bname%5D=&q_order=
 ---
+2014/12/28 16:05:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "picupload" 动作.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php:483
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php(270): CController->missingAction('picupload')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(282): CController->run('picupload')
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(141): CWebApplication->runController('site/picupload')
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/bargain/index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/bargain/index.php?r=site/picupload
+HTTP_REFERER=http://localhost/bargain/index.php?r=bargain/goods/edit&id=g54906392bc1e7
+---
+2014/12/28 16:07:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "picupload" 动作.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php:483
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php(270): CController->missingAction('picupload')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(282): CController->run('picupload')
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(141): CWebApplication->runController('site/picupload')
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/bargain/index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/bargain/index.php?r=site/picupload
+HTTP_REFERER=http://localhost/bargain/index.php?r=bargain/goods/edit&id=g54906392bc1e7
+---
+2014/12/28 16:07:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "picupload" 动作.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php:483
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php(270): CController->missingAction('picupload')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(282): CController->run('picupload')
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(141): CWebApplication->runController('site/picupload')
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/bargain/index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/bargain/index.php?r=site/picupload
+HTTP_REFERER=http://localhost/bargain/index.php?r=bargain/goods/edit&id=g54906392bc1e7
+---
+2014/12/28 16:08:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "picupload" 动作.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php:483
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php(270): CController->missingAction('picupload')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(282): CController->run('picupload')
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(141): CWebApplication->runController('site/picupload')
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/bargain/index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/bargain/index.php?r=site/picupload
+HTTP_REFERER=http://localhost/bargain/index.php?r=bargain/goods/edit&id=g54906392bc1e7
+---
+2014/12/28 16:08:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "picupload" 动作.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php:483
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php(270): CController->missingAction('picupload')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(282): CController->run('picupload')
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(141): CWebApplication->runController('site/picupload')
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/bargain/index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/bargain/index.php?r=site/picupload
+HTTP_REFERER=http://localhost/bargain/index.php?r=bargain/goods/edit&id=g54906392bc1e7
+---
+2014/12/28 16:08:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "picupload" 动作.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php:483
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php(270): CController->missingAction('picupload')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(282): CController->run('picupload')
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(141): CWebApplication->runController('site/picupload')
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/bargain/index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/bargain/index.php?r=site/picupload
+HTTP_REFERER=http://localhost/bargain/index.php?r=bargain/goods/edit&id=g54906392bc1e7
+---
+2014/12/28 16:09:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "picupload" 动作.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php:483
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php(270): CController->missingAction('picupload')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(282): CController->run('picupload')
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(141): CWebApplication->runController('site/picupload')
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/bargain/index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/bargain/index.php?r=site/picupload
+HTTP_REFERER=http://localhost/bargain/index.php?r=bargain/goods/edit&id=g54906392bc1e7
+---
+2014/12/28 16:09:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "picupload" 动作.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php:483
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php(270): CController->missingAction('picupload')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(282): CController->run('picupload')
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(141): CWebApplication->runController('site/picupload')
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/bargain/index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/bargain/index.php?r=site/picupload
+HTTP_REFERER=http://localhost/bargain/index.php?r=bargain/goods/edit&id=g54906392bc1e7
+---
+2014/12/28 16:10:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "picupload" 动作.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php:483
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php(270): CController->missingAction('picupload')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(282): CController->run('picupload')
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(141): CWebApplication->runController('site/picupload')
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/bargain/index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/bargain/index.php?r=site/picupload
+HTTP_REFERER=http://localhost/bargain/index.php?r=bargain/goods/edit&id=g54906392bc1e7
+---
+2014/12/28 16:11:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "picupload" 动作.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php:483
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php(270): CController->missingAction('picupload')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(282): CController->run('picupload')
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(141): CWebApplication->runController('site/picupload')
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/bargain/index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/bargain/index.php?r=site/picupload
+HTTP_REFERER=http://localhost/bargain/index.php?r=bargain/goods/edit&id=g54906392bc1e7
+---
+2014/12/28 16:11:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "picupload" 动作.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php:483
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php(270): CController->missingAction('picupload')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(282): CController->run('picupload')
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(141): CWebApplication->runController('site/picupload')
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/bargain/index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/bargain/index.php?r=site/picupload
+HTTP_REFERER=http://localhost/bargain/index.php?r=bargain/goods/new
+---
+2014/12/28 16:12:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "picupload" 动作.' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php:483
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php(270): CController->missingAction('picupload')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(282): CController->run('picupload')
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(141): CWebApplication->runController('site/picupload')
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/bargain/index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/bargain/index.php?r=site/picupload
+HTTP_REFERER=http://localhost/bargain/index.php?r=bargain/goods/new
+---
+2014/12/28 16:12:39 [error] [php] move_uploaded_file(attachment/goods/1419754359316.png): failed to open stream: Permission denied (/Applications/XAMPP/xamppfiles/htdocs/bargain/protected/components/Utils.php:1000)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/actions/CInlineAction.php(49): MController->actionPicupload()
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/filters/CFilterChain.php(133): MController->runAction()
+#3 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/filters/CInlineFilter.php(58): MController->filterAccessControl()
+#6 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php(291): CFilterChain->run()
+#8 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CController.php(265): MController->runActionWithFilters()
+#9 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(282): MController->run()
+#10 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Applications/XAMPP/xamppfiles/htdocs/bargain/index.php(20): CWebApplication->run()
+REQUEST_URI=/bargain/index.php?r=m/picupload
+in /Applications/XAMPP/xamppfiles/htdocs/bargain/protected/components/Utils.php (1000)
+in /Applications/XAMPP/xamppfiles/htdocs/bargain/protected/controllers/MController.php (56)
+in /Applications/XAMPP/xamppfiles/htdocs/bargain/index.php (20)
