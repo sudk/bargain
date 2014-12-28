@@ -1048,6 +1048,6 @@ eof;
     }
 
     public static function HiddenPhone($phone){
-        return substr_replace($phone,"****",3);
+        return substr_replace($phone,"****",3,4);
     }
 }
