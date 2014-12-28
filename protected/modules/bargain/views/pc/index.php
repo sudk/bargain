@@ -7,9 +7,14 @@
                     <a href="./?r=mobile/goods/index&id=<?=$row['id']?>"><img width="100%" style="max-height:400px;" src="<?= Yii::app()->params['upload_file_path'] . "/" . $row['img_url'] ?>" ></a>
                 </div>
                 <div class="panel-footer">
-                    <?=mb_substr($row['name'],0,8)?>
-                    <span id="price_now" class="text-warning pull-right" style="font-size:20px;font-weight:bolder;vertical-align:middle;">
-                                ￥<?= number_format($row['price'] / 100, 2) ?>
+                    <?=mb_substr($row['name'],0,12)?>
+                    <span id="price_now" class="text-warning pull-right">
+                        <span  style="font-size:20px;font-weight:bolder;vertical-align:middle;">
+                            ￥<?= number_format($row['price'] / 100, 2) ?>
+                        </span>
+                        <span>
+                            每次递减：￥<?= number_format($row['reduce'] / 100, 2) ?>
+                        </span>
                     </span>
                 </div>
                 <div class="panel-footer">

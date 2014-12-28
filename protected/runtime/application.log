@@ -4978,3 +4978,11 @@ REQUEST_URI=/bargain/index.php?r=m/picupload
 in /Applications/XAMPP/xamppfiles/htdocs/bargain/protected/components/Utils.php (1000)
 in /Applications/XAMPP/xamppfiles/htdocs/bargain/protected/controllers/MController.php (56)
 in /Applications/XAMPP/xamppfiles/htdocs/bargain/index.php (20)
+2014/12/28 19:53:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "mobile/pc"。' in /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/web/CWebApplication.php(141): CWebApplication->runController('mobile/pc')
+#1 /Applications/XAMPP/xamppfiles/htdocs/yii-1.1.14/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/bargain/index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/bargain/?r=mobile/pc
+---
