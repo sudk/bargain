@@ -1046,4 +1046,8 @@ eof;
         $tuData = curl_exec($tuCurl);
         return $tuData;
     }
+
+    public static function HiddenPhone($phone){
+        return substr_replace($phone,"****",3);
+    }
 }

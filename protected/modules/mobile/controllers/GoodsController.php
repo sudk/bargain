@@ -211,7 +211,7 @@ class GoodsController extends MobileBaseController
         if($rows){
             $str="";
             foreach($rows as $row){
-                $bargain_id=$row['bargain_id'];
+                $bargain_id=Utils::HiddenPhone($row['bargain_id']);
                 $reduce=number_format($row['reduce_price']/100,2);
                 $record_time=date("y-m-d H:i",strtotime($row['record_time']));
                 $str.="<li>{$bargain_id} ￥-{$reduce} {$record_time}</li>";
