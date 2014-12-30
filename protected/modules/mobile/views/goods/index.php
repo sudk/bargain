@@ -48,6 +48,9 @@
                                     确定
                                 </button>
                             </div>
+                            <a class="col-xs-12" href="./?r=mobile/goods/index&id=<?=$model['id']?>" style="font-size:20px;">
+                                我也要参加活动
+                            </a>
                         </div>
                     </li>
                 <?php endif; ?>
