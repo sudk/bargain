@@ -51,11 +51,6 @@
 
                         </div>
                     </li>
-                    <li>
-                        <a class="col-xs-12" href="./?r=mobile/goods/index&id=<?=$model['id']?>" style="font-size:20px;">
-                            <p>我也要参加活动</p>
-                        </a>
-                    </li>
                 <?php endif; ?>
 
                 <li id="captcha_li"  style="display:none">
@@ -76,6 +71,13 @@
                         </div>
                     </div>
                 </li>
+                <?php if ($_GET['s_n']): ?>
+                <li>
+                    <a class="col-xs-12" href="./?r=mobile/goods/index&id=<?=$model['id']?>" style="font-size:20px;">
+                        <p>我也要参加活动</p>
+                    </a>
+                </li>
+                <?php endif; ?>
                 <li id="price" style="display:none">
                         <span id="price_now" class="text-warning" style="font-size:20px;font-weight:bolder;vertical-align:middle">
                         ￥<?= number_format($model['price'] / 100, 2) ?>
