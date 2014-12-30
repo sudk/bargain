@@ -94,7 +94,7 @@ class BargainPrice extends CActiveRecord
             $s=rand(1,5)*100;
             $price = $model->price-$s;
             if ($price < 8000) {
-                $s=8000-$model->price;
+                $s=$model->price-8000;
                 $model->price=8000;
             }else{
                 $model->price=$price;

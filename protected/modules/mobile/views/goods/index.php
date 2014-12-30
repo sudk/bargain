@@ -72,7 +72,7 @@
                     </div>
                 </li>
                 <?php if ($_GET['s_n']): ?>
-                <li>
+                <li style="text-align: center">
                     <a class="col-xs-12" href="./?r=mobile/goods/index&id=<?=$model['id']?>" style="font-size:20px;">
                         <p>我也要参加活动</p>
                     </a>
