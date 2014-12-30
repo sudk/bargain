@@ -11,9 +11,7 @@ class SampleController extends BaseController
     public function actionIndex()
     {
 
-        $command=Yii::app()->db->createCommand("call create_month_report('201402')");
-        $rowCount=$command->execute();
-        print_r($rowCount);
+        echo Utils::SendMsg("13335130151",123123);
     }
 
 }
