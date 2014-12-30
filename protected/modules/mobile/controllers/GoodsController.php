@@ -209,7 +209,7 @@ class GoodsController extends MobileBaseController
                 $bargain_id=Utils::HiddenPhone($row['bargain_id']);
                 $reduce=number_format($row['reduce_price']/100,2);
                 $record_time=date("y-m-d H:i",strtotime($row['record_time']));
-                $str.="<li>{$bargain_id} ￥-{$reduce} {$record_time}</li>";
+                $str.="<li>{$bargain_id} ￥-{$reduce} <span class='pull-right'>{$record_time}</span></li>";
             }
             if($rs['total_num']>10){
                 $str.="<li onclick='go_log()'>查看更多</li>";
