@@ -87,7 +87,7 @@ class BargainPrice extends CActiveRecord
         try {
             $model = BargainPrice::model()->find("goods_id='{$goods_id}' and uid='{$uid}'");
             if($model->price <= 8000){
-                $msg['status']=-5;
+                $msg['status']=-99;
                 $msg['desc']="亲，您已经砍到最低价了";
                 return $msg;
             }

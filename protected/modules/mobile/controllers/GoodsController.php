@@ -133,7 +133,7 @@ class GoodsController extends MobileBaseController
             $_SESSION['number']=$n;
             $_SESSION['t']=time();
             $captcha=rand(100000,999999);
-            $captcha=100000;
+            //$captcha=100000;
             Utils::SendMsg($n,$captcha);
             Yii::app()->fcache->set($n,$captcha,60*5);
         }while(false);

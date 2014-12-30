@@ -48,10 +48,13 @@
                                     确定
                                 </button>
                             </div>
-                            <a class="col-xs-12" href="./?r=mobile/goods/index&id=<?=$model['id']?>" style="font-size:20px;">
-                                我也要参加活动
-                            </a>
+
                         </div>
+                    </li>
+                    <li>
+                        <a class="col-xs-12" href="./?r=mobile/goods/index&id=<?=$model['id']?>" style="font-size:20px;">
+                            <p>我也要参加活动</p>
+                        </a>
                     </li>
                 <?php endif; ?>
 
@@ -308,7 +311,7 @@ window.shareData = {
             },
             success: function (data, textStatus) {
                 alert(data.desc);
-                if (data.status == 0||data.status == -2||data.status == -6||data.status == -7) {
+                if (data.status == 0||data.status == -2||data.status == -6||data.status == -7||data.status == -99) {
                     bargains_show();
                     $("#captcha_li").hide();
                 }
