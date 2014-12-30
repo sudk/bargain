@@ -2,38 +2,34 @@
     <img src="img/share.png" style="width:100%">
 </div>
 <div class="row well well-sm" style="padding-top:0px;margin-bottom:0px;">
-    <h3 class="text-center"><?= $model['name'] ?></h3>
-
     <div class="col-xs-12" style="padding:0px;">
         <img width="100%" style="max-height:500px;"
              src="<?= Yii::app()->params['upload_file_path'] . "/" . $model['img_url'] ?>"
              alt="..." class="img-rounded pull-left">
     </div>
 </div>
-<div id="list">
-    <div class="list-group">
-        <a class="list-group-item" id="price">
-            <span id="price_now" class="text-warning" style="font-size:20px;font-weight:bolder;vertical-align:middle">
-                        ￥<?= number_format($model['price'] / 100, 2) ?>
-                    </span>
-            <del id="price_pass"></del>
-        </a>
-        <a class="list-group-item">
+<div id="list" class="col-xs-12">
+    <ul class="list-unstyled">
+        <li>
             <ul class="list-unstyled">
                 <?php if (!$_GET['s_n']): ?>
                     <li id="number_li">
-                        <small class="text-muted">输入手机号生成链接让好友帮你砍价</small>
-                        <div class="row">
-                            <div class="col-xs-8">
-                                <input type="text" id="number" style="width:100%;font-size:18px;border-color:gainsboro;"
+
+                        <div>
+                            <p>
+                                <small class="text-muted">输入手机号生成链接让好友帮你砍价</small>
+                                <input type="text" id="number" style="width:100%;font-size:20px;border-color:gainsboro;"
                                        maxlength="11"
                                        name="number" placeholder="请输入手机号"/>
-                            </div>
-                            <div class="col-xs-4">
-                                <button type="button" onclick="generate(this)" style="vertical-align:text-bottom;font-size:16px;" data-loading-text="请稍候" class="btn btn-warning pull-left">
+                            </p>
+                            <p>
+                                <button type="button" onclick="generate(this)" style="font-size:16px;width:100%" data-loading-text="请稍候" class="btn btn-info btn-lg">
                                     确定
                                 </button>
-                            </div>
+                            </p>
+                            <p style="font-size:20px;font-weight:bolder">
+                                <input type="checkbox" id="accepted" />我已经阅读<a href="./?r=mobile/goods/desc&id=<?=$model['id']?>">活动规则</a>
+                            </p>
                         </div>
                     </li>
                     <?php else: ?>
@@ -55,6 +51,7 @@
                         </div>
                     </li>
                 <?php endif; ?>
+
                 <li id="captcha_li"  style="display:none">
                     <div class="row">
                         <div class="col-xs-5">
@@ -73,6 +70,12 @@
                         </div>
                     </div>
                 </li>
+                <li id="price" style="display:none">
+                        <span id="price_now" class="text-warning" style="font-size:20px;font-weight:bolder;vertical-align:middle">
+                        ￥<?= number_format($model['price'] / 100, 2) ?>
+                            </span>
+                    <del id="price_pass"></del>
+                </li>
                 <li id="link_li" style="display:none">
                     分享链接：
                     <p>
@@ -86,7 +89,8 @@
                     </ul>
                 </li>
             </ul>
-        </a>
+        </li>
+        <!--
         <a class="list-group-item">
             <div class="text-info">
                 开始时间：<?= $model['start_time'] ?>
@@ -103,9 +107,12 @@
                 <li><?= $model['desc']; ?></li>
             </ul>
         </a>
-    </div>
+        -->
+    </ul>
 </div>
+<!--
 <a class="fixed_bar_bottom glyphicon glyphicon-home" style="color:darkgray" href="./?r=mobile/goods/list"></a>
+-->
 <script>
 window.shareData = {
     "imgUrl": "<?=Yii::app()->params['base_host'].Yii::app()->params['upload_file_path'] . "/" . $model['img_url'] ?>",
@@ -128,8 +135,13 @@ window.shareData = {
         //$(obj).button('loading');
         //$(obj).button('reset');
         var number = $("#number").val();
+        var accepted= document.getElementById("accepted").checked;
         if (number.length != 11) {
             alert("输入手机号");
+            return;
+        }
+        if (!accepted) {
+            alert("请选择“我已阅读活动规则”");
             return;
         }
         $.ajax({
@@ -209,6 +221,7 @@ window.shareData = {
                     $("#bargains").html(data.list);
                 }
                 if(data.price){
+                    $("#price").show();
                     $("#price_now").html(data.price.price_now);
                     $("#price_pass").html(data.price.price_pass);
                 }

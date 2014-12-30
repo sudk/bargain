@@ -81,13 +81,13 @@ class BargainLog extends CActiveRecord
         return $rs;
     }
 
-    public function log($goods_id,$uid,$bargain_id){
-        $goods=Goods::model()->findByPk($goods_id);
+    public function log($goods_id,$uid,$bargain_id,$reduce){
+        //$goods=Goods::model()->findByPk($goods_id);
         $model=new BargainLog();
         $model->goods_id=$goods_id;
         $model->uid=$uid;
         $model->bargain_id=$bargain_id;
-        $model->reduce_price=$goods->reduce;
+        $model->reduce_price=$reduce;
         $model->record_time=date("Y-m-d H:i:s");
         try{
             $model->save();

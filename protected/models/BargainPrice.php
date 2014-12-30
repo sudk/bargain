@@ -82,19 +82,49 @@ class BargainPrice extends CActiveRecord
     }
 
     public function reduce($goods_id,$uid){
-        $goods=Goods::model()->findByPk($goods_id);
-        if($goods){
-            try{
-                $model=BargainPrice::model()->find("goods_id='{$goods_id}' and uid='{$uid}'");
-                $model->price=$model->price-$goods->reduce;
-                $model->record_time=date("Y-m-d H:i:s");
-                return $model->save();
-            }catch (Exception $e){
-                return false;
+        $msg['status']=0;
+        $msg['desc']="成功";
+        try {
+            $model = BargainPrice::model()->find("goods_id='{$goods_id}' and uid='{$uid}'");
+            if($model->price <= 8000){
+                $msg['status']=-5;
+                $msg['desc']="亲，您已经砍到最低价了";
+                return $msg;
             }
-        }else{
-            return false;
+            $s=rand(1,5)*100;
+            $price = $model->price-$s;
+            if ($price < 8000) {
+                $s=8000-$model->price;
+                $model->price=8000;
+            }else{
+                $model->price=$price;
+            }
+            $msg['reduce']=$s;
+            $model->record_time = date("Y-m-d H:i:s");
+            $model->save();
+            return $msg;
+        } catch (Exception $e) {
+            $msg['status']=-9;
+            $msg['desc']="砍价失败，请重试！";
+            return $msg;
         }
+//        $goods=Goods::model()->findByPk($goods_id);
+//        if($goods){
+//            try{
+//                $model=BargainPrice::model()->find("goods_id='{$goods_id}' and uid='{$uid}'");
+//
+//                $price=$model->price-$goods->reduce;
+//                if($model->price<=8000){
+//                    $model->price=8000;
+//                }
+//                $model->record_time=date("Y-m-d H:i:s");
+//                return $model->save();
+//            }catch (Exception $e){
+//                return false;
+//            }
+//        }else{
+//            return false;
+//        }
     }
 
     public function firstAdd($goods_id,$uid){

@@ -182,18 +182,13 @@ class GoodsController extends MobileBaseController
                 break;
             }
             $bargain_price=new BargainPrice();
-            $rs=$bargain_log->log($id,$s_n,$n);
-            if($rs){
-                if(!$bargain_price->reduce($id,$s_n)){
-                    $msg['status']=-3;
-                    $msg['desc']='亲，砍价失败，请重试！';
-                    break;
-                }
-            }else{
-                $msg['status']=-4;
-                $msg['desc']='亲，砍价失败，请重试！';
+            $rs=$bargain_price->reduce($id,$s_n);
+            if($rs['status']!=0){
+                $msg=$rs;
                 break;
             }
+            $bargain_log->log($id,$s_n,$n,$rs['reduce']);
+            break;
 
         }while(false);
         print_r(json_encode($msg));
@@ -227,6 +222,12 @@ class GoodsController extends MobileBaseController
         $msg['list']=$str;
         $msg['price']=$price;
         print_r(json_encode($msg));
+    }
+
+    public function actionDesc(){
+        $id=$_POST['id'];
+        $model=Goods::GetTheActiveOne($id);
+        $this->render('rule',array('model'=>$model));
     }
 
 }
