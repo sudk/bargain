@@ -25,7 +25,7 @@
                                 </button>
                             </p>
                             <p style="font-size:20px;font-weight:bolder;color:#ffffff">
-                                <input type="checkbox" style="width:13px;height:13px;" id="accepted" />我已经阅读<a style="color:#ffff00" href="./?r=mobile/goods/desc&id=<?=$model['id']?>">活动规则</a>
+                                <input type="checkbox" style="width:20px;height:20px;" id="accepted" />我已经阅读<a style="color:#ffff00" href="./?r=mobile/goods/desc&id=<?=$model['id']?>">活动规则</a>
                             </p>
                         </div>
                     </li>
