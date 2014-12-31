@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html  style="background-color: #ca1947">
     <head>
         <meta charset="UTF-8">
         <title><?=Yii::app()->name?></title>
@@ -17,8 +17,7 @@
 
 
     </head>
-    <body>
-
+    <body style="background-color: #ca1947">
         <?php echo $content; ?>
         <!-- Bootstrap -->
         <script src="js/bootstrap.min.js" type="text/javascript"></script>

@@ -1,12 +1,9 @@
 <div style="position:fixed; z-index:2147483647;top:10px;display:block;;width:100%;display:none;" id="share">
     <img src="img/share.png" style="width:100%">
 </div>
-<div class="row well well-sm" style="padding-top:0px;margin-bottom:0px;">
-    <div class="col-xs-12" style="padding:0px;">
-        <img width="100%" style="max-height:500px;"
-             src="<?= Yii::app()->params['upload_file_path'] . "/" . $model['img_url'] ?>"
-             alt="..." class="img-rounded pull-left">
-    </div>
+<div>
+    <img width="100%" style="max-height:500px;"
+         src="img/m_bg.jpg" >
 </div>
 <div id="list" class="col-xs-12">
     <ul class="list-unstyled">
@@ -17,24 +14,24 @@
 
                         <div>
                             <p>
-                                <small class="text-muted">输入手机号生成链接让好友帮你砍价</small>
+                                <small class="text-muted" style="color:#ffffff">输入手机号生成链接让好友帮你砍价</small>
                                 <input type="text" id="number" style="width:100%;font-size:20px;border-color:gainsboro;"
                                        maxlength="11"
                                        name="number" placeholder="请输入手机号"/>
                             </p>
                             <p>
-                                <button type="button" onclick="generate(this)" style="font-size:16px;width:100%" data-loading-text="请稍候" class="btn btn-info btn-lg">
+                                <button type="button" onclick="generate(this)" style="font-size:16px;width:100%" data-loading-text="请稍候" class="btn btn-warning btn-lg">
                                     我要参加活动
                                 </button>
                             </p>
-                            <p style="font-size:20px;font-weight:bolder">
-                                <input type="checkbox" id="accepted" />我已经阅读<a href="./?r=mobile/goods/desc&id=<?=$model['id']?>">活动规则</a>
+                            <p style="font-size:20px;font-weight:bolder;color:#ffffff">
+                                <input type="checkbox" id="accepted" />我已经阅读<a style="color:#ffff00" href="./?r=mobile/goods/desc&id=<?=$model['id']?>">活动规则</a>
                             </p>
                         </div>
                     </li>
                     <?php else: ?>
                     <li id="number_li">
-                        <small class="text-muted">输入手机号帮他砍价吧</small>
+                        <small class="text-muted" style="color:#ffffff">输入手机号帮他砍价吧</small>
                         <div class="row">
                             <div class="col-xs-8">
                                 <input type="text" id="number" style="width:100%;font-size:18px;border-color:gainsboro;"
@@ -85,13 +82,13 @@
                     <del id="price_pass"></del>
                 </li>
                 <li id="link_li" style="display:none">
-                    分享链接：
+                    <span  style="color:yellowgreen">分享链接：</span>
                     <p>
                         <small class="text-muted" id="link_t">正在加载...</small>
                         <span class="text-info" onclick="share_prompt();">分享</span></p>
                 </li>
                 <li id="bargain_li" style="display:none">
-                    <small class="text-muted">好友砍价记录</small>
+                    <small class="text-muted" style="color:yellowgreen">好友砍价记录</small>
                     <ul class="list-unstyled" id="bargains">
                         <li>正在加载...</li>
                     </ul>
