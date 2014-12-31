@@ -25,7 +25,7 @@
                                 </button>
                             </p>
                             <p style="font-size:20px;font-weight:bolder;color:#ffffff">
-                                <input type="checkbox" id="accepted" />我已经阅读<a style="color:#ffff00" href="./?r=mobile/goods/desc&id=<?=$model['id']?>">活动规则</a>
+                                <input type="checkbox" style="width:13px;height:13px;" id="accepted" />我已经阅读<a style="color:#ffff00" href="./?r=mobile/goods/desc&id=<?=$model['id']?>">活动规则</a>
                             </p>
                         </div>
                     </li>
@@ -69,8 +69,8 @@
                     </div>
                 </li>
                 <?php if ($_GET['s_n']): ?>
-                <li style="text-align: center">
-                    <a class="col-xs-12" href="./?r=mobile/goods/index&id=<?=$model['id']?>" style="font-size:20px;">
+                <li style="text-align:center">
+                    <a class="col-xs-12" href="./?r=mobile/goods/index&id=<?=$model['id']?>" style="font-size:20px;margin-top:10px;">
                         <p>我也要参加活动</p>
                     </a>
                 </li>
@@ -84,12 +84,12 @@
                 <li id="link_li" style="display:none">
                     <span  style="color:yellowgreen">分享链接：</span>
                     <p>
-                        <small class="text-muted" id="link_t">正在加载...</small>
-                        <span class="text-info" onclick="share_prompt();">分享</span></p>
+                        <small class="text-muted" id="link_t" style="color: #ffffff">正在加载...</small>
+                        <span class="text-info" style="color:yellowgreen" onclick="share_prompt();">分享</span></p>
                 </li>
                 <li id="bargain_li" style="display:none">
                     <small class="text-muted" style="color:yellowgreen">好友砍价记录</small>
-                    <ul class="list-unstyled" id="bargains">
+                    <ul class="list-unstyled" id="bargains" style="color:#ffffff">
                         <li>正在加载...</li>
                     </ul>
                 </li>
