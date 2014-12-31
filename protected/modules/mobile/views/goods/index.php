@@ -24,7 +24,7 @@
                             </p>
                             <p>
                                 <button type="button" onclick="generate(this)" style="font-size:16px;width:100%" data-loading-text="请稍候" class="btn btn-info btn-lg">
-                                    确定
+                                    我要参加活动
                                 </button>
                             </p>
                             <p style="font-size:20px;font-weight:bolder">
