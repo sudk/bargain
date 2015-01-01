@@ -64,7 +64,7 @@
                                 确定
                             </button>
                             &nbsp;
-                            <button type="button" style="vertical-align:text-bottom;font-size:16px;" onclick="captcha(this)"  data-loading-text="请稍候" class="btn btn-info" id="resend">60</button>
+                            <button type="button" style="vertical-align:text-bottom;font-size:16px;" onclick="captcha(this)"  data-loading-text="请稍候" class="btn btn-info" id="resend">120</button>
                         </div>
                     </div>
                 </li>
@@ -288,7 +288,7 @@ window.shareData = {
         }
     }
     function reset_time(){
-        time_out=60;
+        time_out=120;
         $("#resend").html(time_out);
         $("#resend").addClass("disabled");
         setTimeout(count_time,1000);

@@ -135,7 +135,7 @@ class GoodsController extends MobileBaseController
             $captcha=rand(100000,999999);
             //$captcha=100000;
             Utils::SendMsg($n,$captcha);
-            Yii::app()->fcache->set($n,$captcha,60*5);
+            Yii::app()->fcache->set($n,$captcha,60*10);
         }while(false);
         print_r(json_encode($msg));
     }
