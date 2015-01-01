@@ -80,6 +80,7 @@
                         ￥<?= number_format($model['price'] / 100, 2) ?>
                             </span>
                     <del id="price_pass"></del>
+                    <span id="price_success" style="font-size:25px;font-weight:bolder;vertical-align:middle"></span>
                 </li>
                 <li id="link_li" style="display:none">
                     <span  style="color:yellowgreen">分享链接：</span>
@@ -229,6 +230,9 @@ window.shareData = {
                     $("#price").show();
                     $("#price_now").html(data.price.price_now);
                     $("#price_pass").html(data.price.price_pass);
+                    if(data.price.price_success){
+                        $("#price_success").html(data.price.price_success);
+                    }
                 }
 
             },
