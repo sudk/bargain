@@ -197,6 +197,7 @@ class GoodsController extends MobileBaseController
     public function actionBargains(){
         $id=$_POST['id'];
         $s_n=$_POST['s_n'];
+        $is_g=$_POST['is_g'];
         $args['goods_id']=$id;
         $args['uid']=$s_n;
         $rs=BargainLog::queryList(0,10,$args);
@@ -219,7 +220,12 @@ class GoodsController extends MobileBaseController
             $price['price_now']="￥".number_format($price['price_now']/100,2);
             $price['price_pass']="原价".number_format($price['price_pass']/100,2);
             if($price['price_now']==8000){
-                $price['price_success']=" 砍价成功";
+                if($is_g){
+                    $price['price_success']="砍价成功，请到营业厅办理业务";
+                }else{
+                    $price['price_success']="砍价成功，谢谢大家";
+                }
+
             }
         }
         $msg['list']=$str;

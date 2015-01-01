@@ -80,7 +80,7 @@
                         ￥<?= number_format($model['price'] / 100, 2) ?>
                             </span>
                     <del id="price_pass"></del>
-                    <span id="price_success" style="font-size:25px;font-weight:bolder;vertical-align:middle"></span>
+                    <p id="price_success" style="font-size:25px;font-weight:bolder;vertical-align:middle"></p>
                 </li>
                 <li id="link_li" style="display:none">
                     <span  style="color:yellowgreen">分享链接：</span>
@@ -135,6 +135,7 @@ window.shareData = {
 
 
     var time_out=0;
+    var is_g=false;
     var s_n =<?=$_GET['s_n']?"'".$_GET['s_n']."'":'false'?>;
     var id='<?=$model['id']?>';
     var generate = function (obj) {
@@ -150,6 +151,7 @@ window.shareData = {
             alert("请选择“我已阅读活动规则”");
             return;
         }
+        is_g=true;
         $.ajax({
             type: "post",
             data: {number:number,id:id},
@@ -215,7 +217,7 @@ window.shareData = {
     function bargains_show(){
         $.ajax({
             type: "post",
-            data: {id:id,s_n:s_n},
+            data: {id:id,s_n:s_n,is_g:is_g},
             dataType: "json",
             url: "./?r=mobile/goods/bargains",
             beforeSend: function (XMLHttpRequest) {
