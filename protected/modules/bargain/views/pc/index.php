@@ -4,7 +4,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <a href="./?r=mobile/goods/index&id=<?=$row['id']?>"><img width="100%" style="max-height:400px;" src="<?= Yii::app()->params['upload_file_path'] . "/" . $row['img_url'] ?>" ></a>
+                    <a href="./?r=mobile/goods/index&id=<?=$row['id']?>"><img width="100%" style="max-height:400px;" src="img/pc_bg.jpg" ></a>
                 </div>
                 <div class="panel-footer">
                     <?=mb_substr($row['name'],0,12)?>
