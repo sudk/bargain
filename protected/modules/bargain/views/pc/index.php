@@ -1,7 +1,7 @@
 <div style="margin-top:20px;" xmlns="http://www.w3.org/1999/html"></div>
 <?php if(count($rows)):?>
     <?php foreach($rows as $row):?>
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <a href="./?r=mobile/goods/index&id=<?=$row['id']?>"><img width="100%" style="max-height:400px;" src="<?= Yii::app()->params['upload_file_path'] . "/" . $row['img_url'] ?>" ></a>
@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-    <?php endforeach;?>
+    <?php break; endforeach;?>
 <?php endif;?>
 <script>
     function qr_code(obj,id){

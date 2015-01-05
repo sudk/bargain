@@ -9,7 +9,8 @@ class GoodsController extends MobileBaseController
 {
 
     public function actionIndex(){
-        $id=$_REQUEST['id'];
+        //$id=$_REQUEST['id'];
+        $id="g54a39d2d99f07";
         if($id){
             $model=Goods::GetTheActiveOne($id);
         }else{
@@ -60,6 +61,12 @@ class GoodsController extends MobileBaseController
                 $img=Yii::app()->params['upload_file_path']."/qrcode/{$n}.png";
                 $code->create($img);
                 $msg['img']=$img;
+                $is_time_out=Yii::app()->fcache->get($l_id."_pc");
+                if(!$is_time_out){
+                    $m="【网上砍价】尊敬的客户：您的砍价链接：{$link}，请点击使用。";
+                    Utils::SendMsg($number,$m);
+                    Yii::app()->fcache->set($l_id."_pc",true,60);
+                }
             }
         }while(false);
 
@@ -134,7 +141,8 @@ class GoodsController extends MobileBaseController
             $_SESSION['t']=time();
             $captcha=rand(100000,999999);
             //$captcha=100000;
-            Utils::SendMsg($n,$captcha);
+            $m="【网上砍价】您砍价的验证码是：{$captcha}";
+            Utils::SendMsg($n,$m);
             Yii::app()->fcache->set($n,$captcha,60*10);
         }while(false);
         print_r(json_encode($msg));

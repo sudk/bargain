@@ -1016,7 +1016,7 @@ page;
         return $return;
     }
 
-    public static function SendMsg($number,$code){
+    public static function SendMsg($number,$msg){
         $data=<<< eof
 <?xml version="1.0" encoding="utf-8"?>
 <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
@@ -1030,7 +1030,7 @@ page;
     <SendSms xmlns="http://219.238.160.104/qxt95/">
       <AppendID></AppendID>
       <DesMobile>{$number}</DesMobile>
-      <Content>【网上砍价】您砍价的验证码是：{$code}</Content>
+      <Content>{$msg}</Content>
     </SendSms>
   </soap12:Body>
 </soap12:Envelope>

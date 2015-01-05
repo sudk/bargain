@@ -151,11 +151,25 @@ class BargainPrice extends CActiveRecord
 
     public function getPrice($goods_id,$uid){
         return Yii::app()->db->createCommand()
-            ->select("bargain_price.price price_now,goods.price price_pass")
+            ->select("bargain_price.price price_now,bargain_price.bcode,goods.price price_pass")
             ->from("bargain_price")
             ->leftJoin("goods","bargain_price.goods_id=goods.id")
             ->where("goods_id='{$goods_id}' and uid='{$uid}'")
             ->queryRow();
+    }
+
+    public function setBcode($goods_id,$uid,$bcode){
+        try{
+            $model=BargainPrice::model()->find("goods_id='{$goods_id}' and uid='{$uid}'");
+            if(trim($model->bcode)){
+                return false;
+            }
+            $model->bcode=$bcode;
+            $model->save();
+            return true;
+        }catch (Exception $e){
+            return false;
+        }
     }
 
 }
