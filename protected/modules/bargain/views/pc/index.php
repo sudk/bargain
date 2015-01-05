@@ -12,9 +12,6 @@
                         <span  style="font-size:20px;font-weight:bolder;vertical-align:middle;">
                             ￥<?= number_format($row['price'] / 100, 2) ?>
                         </span>
-                        <span>
-                            每次递减：￥<?= number_format($row['reduce'] / 100, 2) ?>
-                        </span>
                     </span>
                 </div>
                 <div class="panel-footer">
@@ -30,7 +27,6 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <h3><small>内容</small></h3>
                                 <div>
                                     <?= $row['desc']; ?>
                                 </div>
