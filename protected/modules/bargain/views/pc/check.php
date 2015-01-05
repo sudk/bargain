@@ -19,7 +19,7 @@
                 </tr>
                 <tr style="width:100%;">
                     <td style="width:80%;">
-                        <input type="text" id="b_code" maxlength="11" placeholder="营业代码">
+                        <input type="text" id="b_code" placeholder="营业代码">
                     </td>
                     <td  style="width:20%;">
                         <button type="button" onclick="set_bcode(this)" data-loading-text="正在处理"  class="btn btn-info">办理</button>
