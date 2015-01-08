@@ -10,11 +10,13 @@ class PcController extends MobileBaseController
     public function actionIndex(){
         $this->layout="//layouts/light";
         $rows=Goods::GetActive();
+        yii::app()->name=$rows[0]['name'];
         $this->render("index",array('rows'=>$rows));
     }
 
     public function actionCheck(){
         $this->layout="//layouts/light";
+        yii::app()->name="内蒙电信宽带砍价";
         $this->render("check");
     }
 

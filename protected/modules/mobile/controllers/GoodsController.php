@@ -38,6 +38,7 @@ class GoodsController extends MobileBaseController
             }
             $l_id=$id.Yii::app()->params['split'].$number;
             $link=Yii::app()->fcache->get($l_id);
+            $rs=false;
             if($link){
                 $msg['l']=$link;
             }else{
@@ -62,10 +63,11 @@ class GoodsController extends MobileBaseController
                 $code->create($img);
                 $msg['img']=$img;
                 $is_time_out=Yii::app()->fcache->get($l_id."_pc");
-                if(!$is_time_out){
+                if(!$is_time_out&&$rs){
                     $m="【网上砍价】尊敬的客户：您的砍价链接：{$link}，请点击使用。";
                     Utils::SendMsg($number,$m);
                     Yii::app()->fcache->set($l_id."_pc",true,60);
+                    $msg['desc']="分享链接已经发送到你的手机上。";
                 }
             }
         }while(false);
@@ -242,7 +244,7 @@ class GoodsController extends MobileBaseController
     }
 
     public function actionDesc(){
-        $id=$_POST['id'];
+        $id=$_GET['id'];
         $model=Goods::GetTheActiveOne($id);
         $this->render('rule',array('model'=>$model));
     }
