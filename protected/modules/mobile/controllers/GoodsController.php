@@ -16,6 +16,7 @@ class GoodsController extends MobileBaseController
         }else{
             $model=Goods::GetTheActiveOne();
         }
+        Yii::app()->name=$model['name'];
         $this->render('index',array('model'=>$model));
     }
 
