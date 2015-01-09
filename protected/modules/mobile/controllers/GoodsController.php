@@ -133,6 +133,12 @@ class GoodsController extends MobileBaseController
                 $msg['desc']='亲，你已经砍过价了';
                 break;
             }
+            $model = BargainPrice::model()->find("goods_id='{$id}' and uid='{$s_n}'");
+            if($model&&$model->price<=8000){
+                $msg['status']=-4;
+                $msg['desc']='该客户已经完成砍价。';
+                break;
+            }
             $t=time();
             $ot=$_SESSION['t'];
             if(($t-$ot)<60){
