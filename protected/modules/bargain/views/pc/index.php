@@ -44,7 +44,7 @@
                                     <p><small class="text-muted" style="color:yellowgreen">砍价连接</small></p>
                                     <p id="link"></p>
                                 </div>
-                                <div style="display:none;" id="bargain_div">
+                                <div style="display:none;color:#ffffff" id="bargain_div">
                                     <p><small class="text-muted" style="color:yellowgreen">好友砍价记录</small></p>
                                     <p  id="bargains"></p>
                                 </div>
