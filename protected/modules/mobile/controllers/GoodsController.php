@@ -234,8 +234,6 @@ class GoodsController extends MobileBaseController
             }
             $b_price=new BargainPrice();
             $price=$b_price->getPrice($id,$s_n);
-            $price['price_now']="￥".number_format($price['price_now']/100,2);
-            $price['price_pass']="原价".number_format($price['price_pass']/100,2);
             if(intval($price['price_now'])<=8000){
                 if($is_g){
                     $price['price_success']="砍价成功，请到营业厅办理业务";
@@ -244,6 +242,8 @@ class GoodsController extends MobileBaseController
                 }
 
             }
+            $price['price_now']="￥".number_format($price['price_now']/100,2);
+            $price['price_pass']="原价".number_format($price['price_pass']/100,2);
         }
         $msg['list']=$str;
         $msg['price']=$price;
