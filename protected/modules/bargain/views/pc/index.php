@@ -27,9 +27,9 @@
                             </td>
                             <td style="width:20%;">
                                 <p><small class="text-muted" style="color:#ffffff">输入手机号生成链接让好友帮你砍价</small></p>
-                                <p><input type="text" id="<?= $row['id'] ?>_number" maxlength="11" placeholder="请输入手机号"></p>
+                                <p><input style="width:195px;" type="text" id="<?= $row['id'] ?>_number" maxlength="11" placeholder="请输入手机号"></p>
                                 <p>
-                                    <button type="button" onclick="qr_code(this,'<?= $row['id'] ?>')"
+                                    <button type="button"  style="width:195px;"  onclick="qr_code(this,'<?= $row['id'] ?>')"
                                             data-loading-text="正在生成二维码" class="btn btn-warning">我要参加活动
                                     </button>
                                 </p>
